@@ -1,51 +1,13 @@
-# emarking
+# Prueba-tecnica-webcursos
 
-------------------------------------------
-eMarking activity for Moodle 2.4+
-Version: 1.0.0
-------------------------------------------
+Dejaré los pasos que utilicé para mayor transparencia
 
-Authors:
-Jorge Villalon (jorge.villalon@uai.cl)
-
-Release notes
--------------
-
-1.0.0: First official deploy
-
-NOTE
-----
-
-This module was developed starting from Moodle 2.4.x and it is currently used and
-developed in Moodle 2.8.x. It does not use any specific code in 2.8.x so
-it should be compatible to 2.4+, however we have not tested it.
-
-Introduction
-------------
-
-eMarking is a tool for electronically marking paper based exams, which covers
-the whole process of producing a personalized exam for printing, automatically
-process a scanned exam from a PDF file and upload each exam as a submission for
-each student, provides an interface for annotating the PDF which is supported by
-Moodle rubrics, supports a regrading workflow for students to request regrades
-and tutors or the teacher providing extra feedback.
-
-It also includes some optional features like:
-- Anonymous marking (tutors can not see the exam's author)
-- Grade reports (some basic reports) based on per criteria performance
-- Students can review their feedback through a web based interface or download it in a PDF
-- Justice perception allows teachers to ask their students on their perception on how fair
-was the evaluation, with some extra visualizations of the student performance
-
-Installation
-------------
-
-In order to install eMarking, the emarking directory in which this
-README file is should be copied to the /mod/ directory in your Moodle
-installation. Then visit your admin page to install the module.
-
-Acnkowledgments, suggestions, complaints and bug reporting
-----------------------------------------------------------
-
-I'll be happy to get any useful feedback from you. Please feel free to
-email me, my name and email address are in the top of this document. 
+1.- Descargué xampp, moodle(en inglés) y eMarketing, no sabía que php 8.x no funcionaba con moodle y estuve 30 mins viendo que hacer
+2.- Descargué un xampp con php 7.4.15 y creé la prueba de emarking
+3.- Tras intentar descifrar de donde venia la string "Detalles de la prueba" (Que para mí era "Exam details"), usé inspeccionar elemento y la herramienta de debugg de moodle
+4.- Sabía por la url que estaba viendo un archivo llamado exam.php, por lo que abrí ese archivo y no encontré nada
+5.- Decidí cambiar el lenguaje de moodle para evitar confusiones y me percaté que "Exam details" cambiaba a "Detalles de la prueba" así que decidí buscar los archivos de lenguaje
+6.- En la carpeta lang estaban los archivos de lenguaje del inglés y el español, usando control+f encontré la frase que quería cambiar, pero cuando la cambié en el archivo de lenguaje no pasaba nada
+7.- Me di cuenta de que se estaba creando una variable "examdetails" por lo que la busqué exam.php para ver si era llamada en algún momento
+8.- Cambié el get_string(“examdetails”,”mod_emarking”) por "Quiero ingresar al equipo de desarrollo de Webcursos", dejando el "&nbsp", ya que este equivale a los bordes derechos.
+9.- Cree un nuevo emarking para ver si el texto aparecía
